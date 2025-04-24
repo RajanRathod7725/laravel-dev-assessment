@@ -57,6 +57,13 @@ return [
             'throw' => false,
         ],
 
+        'company_logo' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/company_logo'),
+            'url' => env('APP_URL').'/storage/company_logo',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
     ],
 
     /*

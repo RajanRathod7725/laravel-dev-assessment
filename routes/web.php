@@ -15,7 +15,10 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    $jobs = \App\Models\JobPosting::latest()->get();
+    return Inertia::render('Dashboard', [
+        'jobs'=>$jobs
+    ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
